@@ -2,7 +2,8 @@ use actix_web::HttpRequest;
 use actix_web::HttpResponse;
 use actix_web::{web, App, HttpServer};
 use hashbrown::HashMap;
-use raster::{filter, transform, Color, TransformMode};
+use raster::{filter, transform};
+use raster::{BlurMode, Color, TransformMode};
 use std::path::Path;
 
 fn index(req: HttpRequest) -> HttpResponse {
@@ -52,6 +53,34 @@ fn index(req: HttpRequest) -> HttpResponse {
                             }
                             "mono" => {
                                 filter::grayscale(&mut image).unwrap();
+                            }
+                            "blur" => {
+                                let mut blur = BlurMode::Box;
+                                if value == "gaussian" {
+                                    blur = BlurMode::Gaussian;
+                                }
+                                filter::blur(&mut image, blur).unwrap();
+                            }
+                            "brightness" => {
+                                let factor = value.parse::<f32>();
+                                if !factor.is_err() {
+                                    filter::brightness(&mut image, factor.unwrap()).unwrap();
+                                }
+                            }
+                            "emboss" => {
+                                filter::emboss(&mut image).unwrap();
+                            }
+                            "gamma" => {
+                                let gamma = value.parse::<f32>();
+                                if !gamma.is_err() {
+                                    filter::gamma(&mut image, gamma.unwrap()).unwrap();
+                                }
+                            }
+                            "saturation" => {
+                                let sat = value.parse::<f32>();
+                                if !sat.is_err() {
+                                    filter::saturation(&mut image, sat.unwrap()).unwrap();
+                                }
                             }
                             _ => {
                                 println!("{:?}", "hehe");
