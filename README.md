@@ -22,7 +22,7 @@ cargo run // accessible via localhost:3000
 
 |  original | /?path=pathtoimg;mono=true;flip=h  |
 |-----------|---------------------------------------------------|
-|  ![Original](https://raw.githubusercontent.com/codenoid/darkroom.rs/master/images/boris-satay.jpg)  | ![Result](https://raw.githubusercontent.com/codenoid/darkroom.rs/master/flip_h_mono.jpg | width=100)  |
+|  ![Original](https://raw.githubusercontent.com/codenoid/darkroom.rs/master/images/boris-satay.jpg)  | ![Result](https://raw.githubusercontent.com/codenoid/darkroom.rs/master/flip_h_mono.jpg)  |
 
 |  original | /?path=pathtoimg;flip=h;rotate=45  |
 |-----------|---------------------------------------------------|
