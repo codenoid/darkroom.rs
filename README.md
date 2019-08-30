@@ -15,7 +15,7 @@ This application is `still` slow af, do not use for production, inspired by [Goj
 ```
 git clone https://github.com/codenoid/darkroom.rs
 cd darkroom.rs
-cargo run // accessible via localhost:3000
+cargo run // accessible via localhost:3000/?path=./images/boris-satay.jpg&mono=true&flip=h
 ```
 
 `pathtoimg = ./images/boris-satay.jpg`
@@ -31,3 +31,11 @@ cargo run // accessible via localhost:3000
 |  original | /?path=pathtoimg;flip=v;rotate=90  |
 |-----------|---------------------------------------------------|
 |  ![Original](https://raw.githubusercontent.com/codenoid/darkroom.rs/master/images/boris-satay.jpg)  | ![Result](https://raw.githubusercontent.com/codenoid/darkroom.rs/master/flip_v_rotate_90.jpg)  |
+
+|  original | /?path=pathtoimg;emboss=true  |
+|-----------|---------------------------------------------------|
+|  ![Original](https://raw.githubusercontent.com/codenoid/darkroom.rs/master/images/boris-satay.jpg)  | ![Result](https://raw.githubusercontent.com/codenoid/darkroom.rs/master/emboss.jpg)  |
+
+|  original | /?path=pathtoimg;brightness=0.3  |
+|-----------|---------------------------------------------------|
+|  ![Original](https://raw.githubusercontent.com/codenoid/darkroom.rs/master/images/boris-satay.jpg)  | ![Result](https://raw.githubusercontent.com/codenoid/darkroom.rs/master/brightness_0.3.jpg)  |
